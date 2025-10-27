@@ -2,6 +2,11 @@ import os
 import shutil
 import random
 import hashlib
+from torchsummary import summary
+
+import torch
+
+from models.CNN_TUMOR import CNN_TUMOR
 
 # Base paths
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -116,3 +121,23 @@ print(f"Tumor - Train: {train_tumor}, Test: {test_tumor}")
 # Split no_tumor images
 train_no_tumor, test_no_tumor = split_images(RAW_NO_TUMOR_DIR, TRAIN_NO_TUMOR_DIR, TEST_NO_TUMOR_DIR)
 print(f"No Tumor - Train: {train_no_tumor}, Test: {test_no_tumor}")
+
+
+params_model={
+        "shape_in": (3,256,256),
+        "initial_filters": 8,
+        "num_fc1": 100,
+        "dropout_rate": 0.25,
+        "num_classes": 2}
+
+# Create instantiation of Network class
+cnn_model = CNN_TUMOR(params_model)
+
+# define computation hardware approach (GPU/CPU)
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+model = cnn_model.to(device)
+
+print(f"Model instantiated on device: {device}")
+
+
+summary(cnn_model, input_size=(3, 256, 256),device=device.type)
