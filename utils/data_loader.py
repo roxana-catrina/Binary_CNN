@@ -7,8 +7,8 @@ import os
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Doar definiții aici, fără execuție
-transform = transforms.Compose([
+# Transformări pentru antrenament (cu augmentări)
+train_transform = transforms.Compose([
     transforms.Resize((256, 256)),
     transforms.RandomHorizontalFlip(p=0.5),
     transforms.RandomVerticalFlip(p=0.5),
@@ -16,6 +16,16 @@ transform = transforms.Compose([
     transforms.ToTensor(),
     transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
 ])
+
+# Transformări pentru test (fără augmentări)
+test_transform = transforms.Compose([
+    transforms.Resize((256, 256)),
+    transforms.ToTensor(),
+    transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
+])
+
+# Păstrează pentru compatibilitate
+transform = train_transform
 
 data_dir = os.path.join(os.path.dirname(__file__), "..", "data", "raw")
 
@@ -50,8 +60,8 @@ if __name__ == '__main__':
 
     # DataLoaders
     batch_size = 64
-    train_loader = DataLoader(train_set, batch_size=batch_size, shuffle=True, num_workers=2)
-    test_loader = DataLoader(test_set, batch_size=batch_size, shuffle=False, num_workers=2)
+    train_loader = DataLoader(train_set, batch_size=batch_size, shuffle=True, num_workers=0)
+    test_loader = DataLoader(test_set, batch_size=batch_size, shuffle=False, num_workers=0)
 
     for key, value in {'Training data': train_loader, "Validation data": test_loader}.items():
         for X, y in value:
@@ -59,3 +69,18 @@ if __name__ == '__main__':
             print(f"Shape of X : {X.shape}")
             print(f"Shape of y: {y.shape} {y.dtype}\n")
             break
+
+
+
+
+def get_dataloaders(batch_size=64, num_workers=0):
+    """
+    Return (train_loader, test_loader). Use num_workers=0 on Windows for safety.
+    """
+    train_set = torchvision.datasets.ImageFolder(os.path.join(data_dir, "train"), transform=train_transform)
+    test_set = torchvision.datasets.ImageFolder(os.path.join(data_dir, "test"), transform=test_transform)
+
+    train_loader = DataLoader(train_set, batch_size=batch_size, shuffle=True, num_workers=num_workers)
+    test_loader = DataLoader(test_set, batch_size=batch_size, shuffle=False, num_workers=num_workers)
+
+    return train_loader, test_loader
