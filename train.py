@@ -187,11 +187,18 @@ if __name__ == '__main__':
     ax[1].set_ylabel('Accuracy')
 
     plt.tight_layout()
-    plt.show()
+    # Salvează graficul în loc să-l afișezi
+    plt.savefig('training_history.png', dpi=300, bbox_inches='tight')
+    print("Training history plot saved as 'training_history.png'")
+    plt.close()  # Închide figura pentru a elibera memoria
 
+    print("Generating predictions and confusion matrix...")
     y_true, y_pred = Ture_and_Pred(test_loader, cnn_model)
 
     print(classification_report(y_true, y_pred), '\n\n')
     cm = confusion_matrix(y_true, y_pred)
     show_confusion_matrix(cm, CLA_label)
+
+    print("Saving model...")
     torch.save(cnn_model, "Brain_Tumor_model.pt")
+    print("Model saved as 'Brain_Tumor_model.pt'")

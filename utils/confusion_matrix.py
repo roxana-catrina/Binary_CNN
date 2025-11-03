@@ -1,4 +1,3 @@
-
 import matplotlib.pyplot as plt
 import numpy as np
 import itertools
@@ -22,5 +21,6 @@ def show_confusion_matrix(cm, CLA_label, title='Confusion matrix', cmap=plt.cm.Y
     plt.ylabel('Actual')
     plt.xlabel('Predicted')
     plt.tight_layout()
-    plt.show()
-
+    plt.savefig('confusion_matrix.png', dpi=300, bbox_inches='tight')
+    print("Confusion matrix saved as 'confusion_matrix.png'")
+    plt.close()  # Închide figura
