@@ -1,12 +1,18 @@
 from pkgutil import get_loader
-import seaborn as sns; sns.set(style='darkgrid')
+import seaborn as sns;
+from sklearn.metrics import classification_report, confusion_matrix
+
+from utils.confusion_matrix import show_confusion_matrix
+from utils.ture_and_pred import Ture_and_Pred
+
+sns.set(style='darkgrid')
 import torch.nn as nn
 import matplotlib.pyplot as plt
 from torch import optim
 from torch.optim.lr_scheduler import ReduceLROnPlateau
 import torch
 import copy
-from utils.data_loader import get_dataloaders
+from utils.data_loader import get_dataloaders, CLA_label
 from torch.utils.data import DataLoader
 from tqdm import tqdm
 from models.CNN_TUMOR import CNN_TUMOR
@@ -163,12 +169,29 @@ if __name__ == '__main__':
     # train and validate the model
     cnn_model, loss_hist, metric_hist = Train_Val(cnn_model, params_train, verbose=True)
 
+    # Plot the results
+    epochs = params_train["epochs"]
+    fig, ax = plt.subplots(1, 2, figsize=(12, 5))
 
+    sns.lineplot(x=[*range(1, epochs+1)], y=loss_hist["train"], ax=ax[0], label='loss_hist["train"]')
+    sns.lineplot(x=[*range(1, epochs+1)], y=loss_hist["val"], ax=ax[0], label='loss_hist["val"]')
+    sns.lineplot(x=[*range(1, epochs+1)], y=metric_hist["train"], ax=ax[1], label='Acc_hist["train"]')
+    sns.lineplot(x=[*range(1, epochs+1)], y=metric_hist["val"], ax=ax[1], label='Acc_hist["val"]')
 
-epochs=params_train["epochs"]
-fig,ax = plt.subplots(1,2,figsize=(12,5))
+    ax[0].set_title('Loss History')
+    ax[0].set_xlabel('Epoch')
+    ax[0].set_ylabel('Loss')
 
-sns.lineplot(x=[*range(1,epochs+1)],y=loss_hist["train"],ax=ax[0],label='loss_hist["train"]')
-sns.lineplot(x=[*range(1,epochs+1)],y=loss_hist["val"],ax=ax[0],label='loss_hist["val"]')
-sns.lineplot(x=[*range(1,epochs+1)],y=metric_hist["train"],ax=ax[1],label='Acc_hist["train"]')
-sns.lineplot(x=[*range(1,epochs+1)],y=metric_hist["val"],ax=ax[1],label='Acc_hist["val"]')
+    ax[1].set_title('Accuracy History')
+    ax[1].set_xlabel('Epoch')
+    ax[1].set_ylabel('Accuracy')
+
+    plt.tight_layout()
+    plt.show()
+
+    y_true, y_pred = Ture_and_Pred(test_loader, cnn_model)
+
+    print(classification_report(y_true, y_pred), '\n\n')
+    cm = confusion_matrix(y_true, y_pred)
+    show_confusion_matrix(cm, CLA_label)
+    torch.save(cnn_model, "Brain_Tumor_model.pt")
