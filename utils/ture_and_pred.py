@@ -20,9 +20,3 @@ def Ture_and_Pred(val_loader, model):
 
     return y_true, y_pred
 
-
-# check confusion matrix for error analysis
-y_true, y_pred = Ture_and_Pred(val_loader, cnn_model)
-
-print(classification_report(y_true, y_pred), '\n\n')
-cm = confusion_matrix(y_true, y_pred)
