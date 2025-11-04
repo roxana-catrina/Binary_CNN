@@ -27,16 +27,6 @@ test_transform = transforms.Compose([
 # Păstrează pentru compatibilitate
 transform = train_transform
 
-data_dir = os.path.join(os.path.dirname(__file__), "..", "data", "raw")
-
-CLA_label = {
-    0: 'no_tumor',
-    1: 'tumor'
-}
-
-if __name__ == '__main__':
-    # Tot codul de încărcare și procesare aici
-    train_set = torchvision.datasets.ImageFolder(os.path.join(data_dir, "train"), transform=transform)
     test_set = torchvision.datasets.ImageFolder(os.path.join(data_dir, "test"), transform=transform)
 
     print(train_set.classes)
@@ -76,9 +66,10 @@ if __name__ == '__main__':
 def get_dataloaders(batch_size=64, num_workers=0):
     """
     Return (train_loader, test_loader). Use num_workers=0 on Windows for safety.
+    Relies on existing `transform` and `data_dir` defined in this module.
     """
-    train_set = torchvision.datasets.ImageFolder(os.path.join(data_dir, "train"), transform=train_transform)
-    test_set = torchvision.datasets.ImageFolder(os.path.join(data_dir, "test"), transform=test_transform)
+    train_set = torchvision.datasets.ImageFolder(os.path.join(data_dir, "train"), transform=transform)
+    test_set = torchvision.datasets.ImageFolder(os.path.join(data_dir, "test"), transform=transform)
 
     train_loader = DataLoader(train_set, batch_size=batch_size, shuffle=True, num_workers=num_workers)
     test_loader = DataLoader(test_set, batch_size=batch_size, shuffle=False, num_workers=num_workers)
