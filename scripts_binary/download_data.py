@@ -7,7 +7,7 @@ from pathlib import Path
 # Add parent directory to path
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from config.config import KAGGLE_DATASET, DATA_DIR, RAW_TUMOR_DIR, RAW_NO_TUMOR_DIR
+from config_binary.config import KAGGLE_DATASET, DATA_DIR, RAW_TUMOR_DIR, RAW_NO_TUMOR_DIR
 
 def download_kaggle_dataset():
     """Download dataset from Kaggle"""
@@ -29,7 +29,7 @@ def organize_data():
     print("\nOrganizing data...")
 
     # Find the extracted folder
-    extracted_folders = [f for f in os.listdir(DATA_DIR) if os.path.isdir(os.path.join(DATA_DIR, f)) and f != 'raw']
+    extracted_folders = [f for f in os.listdir(DATA_DIR) if os.path.isdir(os.path.join(DATA_DIR, f)) and f != 'binary']
 
     if not extracted_folders:
         print("No extracted data found!")

@@ -2,8 +2,8 @@ from pkgutil import get_loader
 import seaborn as sns;
 from sklearn.metrics import classification_report, confusion_matrix
 
-from utils.confusion_matrix import show_confusion_matrix
-from utils.ture_and_pred import Ture_and_Pred
+from utils_binary.confusion_matrix import show_confusion_matrix
+from utils_binary.ture_and_pred import Ture_and_Pred
 
 sns.set(style='darkgrid')
 import torch.nn as nn
@@ -12,11 +12,11 @@ from torch import optim
 from torch.optim.lr_scheduler import ReduceLROnPlateau
 import torch
 import copy
-from utils.data_loader import get_dataloaders, CLA_label
+from utils_binary.data_loader import get_dataloaders, CLA_label
 from torch.utils.data import DataLoader
 from tqdm import tqdm
 from models.CNN_TUMOR import CNN_TUMOR
-from config.config import BASE_DIR, cnn_model
+from config_binary.config import BASE_DIR, cnn_model
 
 loss_func = nn.NLLLoss(reduction="sum")
 
