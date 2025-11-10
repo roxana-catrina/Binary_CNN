@@ -11,7 +11,7 @@ from models.CNN_TUMOR import CNN_TUMOR
 # Base paths
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_DIR = os.path.join(BASE_DIR, 'data')
-RAW_DIR = os.path.join(DATA_DIR, 'raw')
+RAW_DIR = os.path.join(DATA_DIR, 'binary')
 
 # Kaggle dataset
 KAGGLE_DATASET = 'preetviradiya/brian-tumor-dataset'
