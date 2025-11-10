@@ -1,0 +1,2 @@
+# Config multiclass package
+
