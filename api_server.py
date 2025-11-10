@@ -75,7 +75,7 @@ def predict_image(image):
         image_tensor = image_tensor.to(torch.device(DEVICE))
 
         # Make prediction
-        with torch.no_grad():
+        with   torch.no_grad():
             outputs = model(image_tensor)
             probabilities = torch.exp(outputs)  # Model returns log_softmax
             predicted_class = torch.argmax(probabilities, dim=1).item()
