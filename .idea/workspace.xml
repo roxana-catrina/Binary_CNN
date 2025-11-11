@@ -5,12 +5,1448 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="78733b6d-a2a2-45ea-8e5f-adca9ff42155" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/api_server_multiclass.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config_multiclass/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config_multiclass/config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/script_multiclass/download_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/copilotDiffState.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/copilotDiffState.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/CNN_TUMOR_MULTICLASS.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils_multilclass/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils_multilclass/data_loader.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api_server_multiclass.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1002).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1012).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1013).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1024).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1035).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1039).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1045).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1048).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1055).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1061).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1073).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1074).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1077).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1083).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1095).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1097).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1112).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1114).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1123).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1128).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1129).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1135).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1138).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1142).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1151).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1157).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1166).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1167).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1170).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1171).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1182).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1184).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1193).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1198).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1201).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1204).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1212).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1214).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1215).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1217).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (122).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1226).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1233).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1241).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1244).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1249).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1267).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1268).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1272).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1284).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1291).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1292).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1293).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1294).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1297).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1298).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1300).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1306).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1316).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1317).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1321).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1322).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1340).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1344).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1347).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1349).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (135).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1353).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1375).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1376).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1378).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1381).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1384).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1396).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (14).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1415).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1419).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1421).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1423).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1426).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (143).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1438).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1439).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1440).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1454).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1456).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (146).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1464).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1469).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1471).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1477).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1480).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1499).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (15).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1501).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1514).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1522).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1527).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1538).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1539).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1541).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1543).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1554).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1555).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1564).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1574).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1575).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1584).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1589).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1602).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1617).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1618).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1619).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1622).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1623).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1628).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1631).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1633).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1636).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1637).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1641).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1642).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1651).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1658).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1664).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1666).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (167).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1673).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1674).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1686).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1696).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1700).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1704).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1719).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1723).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1724).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1728).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (173).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1730).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1734).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1737).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1752).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1755).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1764).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1773).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1774).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1781).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1782).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1790).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1794).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1803).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1810).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1815).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1818).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1828).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1846).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1847).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1851).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1855).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1865).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1870).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1872).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1877).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1901).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1908).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1911).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1918).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1919).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1921).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1925).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1927).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1930).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1931).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1942).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1951).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1959).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1973).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1974).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1976).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1987).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (199).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1994).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (1998).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (2).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (2000).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (2012).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (2019).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (202).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (2022).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (2029).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (2035).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (2036).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (2040).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (2057).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (206).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (2067).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (2071).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (221).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (223).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (225).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (232).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (236).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (237).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (240).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (246).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (252).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (259).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (266).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (275).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (284).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (290).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (296).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (300).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (310).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (323).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (324).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (328).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (332).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (336).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (337).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (341).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (345).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (346).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (35).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (366).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (367).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (374).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (375).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (376).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (388).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (391).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (392).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (396).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (4).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (403).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (407).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (411).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (412).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (42).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (439).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (440).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (441).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (447).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (449).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (461).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (466).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (469).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (47).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (471).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (474).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (49).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (500).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (501).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (506).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (507).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (510).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (518).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (521).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (523).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (525).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (531).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (533).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (546).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (551).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (552).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (566).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (588).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (6).jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (605).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (608).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (615).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (618).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (631).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (635).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (640).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (656).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (665).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (667).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (672).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (686).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (689).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (691).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (695).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (704).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (705).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (708).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (717).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (72).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (721).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (722).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (723).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (73).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (731).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (732).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (735).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (74).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (746).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (747).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (750).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (755).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (757).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (758).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (77).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (776).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (777).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (779).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (78).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (799).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (802).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (81).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (811).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (812).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (819).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (824).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (828).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (85).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (865).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (866).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (883).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (888).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (912).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (937).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (95).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (952).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (953).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (957).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (963).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (964).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (966).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (97).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (972).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (979).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (99).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (994).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/no_tumor/Not Cancer  (997).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1001).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1005).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1008).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (101).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1010).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1017).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1018).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1024).JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1025).JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1026).JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1028).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1038).JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (104).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1040).JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1045).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1049).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1064).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1067).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1078).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1080).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1091).JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1092).JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1096).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1116).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1135).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1145).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1148).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (115).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1154).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1162).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1177).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1184).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1188).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (119).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1203).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (121).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1210).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1234).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1241).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1248).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1250).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1267).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1269).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1280).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1292).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1293).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1312).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1316).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1317).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1328).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1330).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1332).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1347).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1350).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1351).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (136).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1371).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1373).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1378).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1379).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1381).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (14).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1405).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1407).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (143).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1435).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1438).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1443).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1446).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (145).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1459).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1467).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (147).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1471).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1477).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1482).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1495).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (15).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1506).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (151).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1512).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1517).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1518).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1519).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (152).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1525).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1532).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1534).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1555).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1556).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1558).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1561).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1563).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1568).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (159).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1593).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (160).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1601).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1603).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1610).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1612).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (162).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1620).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1621).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1626).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1633).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1640).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1641).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1642).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1643).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1651).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1655).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1669).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1671).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1672).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1686).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1695).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1699).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1706).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1709).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1719).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1731).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1733).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (174).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1745).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1747).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1751).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1762).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1776).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1788).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1796).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1797).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1798).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1800).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1803).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1811).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1812).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1822).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1831).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1836).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1847).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1856).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1857).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (186).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1867).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1871).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1876).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1878).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1890).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1905).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1906).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1910).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1913).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1914).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1915).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1929).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1934).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1936).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1940).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1949).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1955).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1957).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (196).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1960).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1967).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1974).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (198).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1980).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1989).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1992).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (1996).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (2000).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (2002).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (2003).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (2006).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (2011).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (2014).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (2018).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (202).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (2020).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (2026).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (2046).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (2064).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (2070).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (2075).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (2082).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (2083).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (209).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (2097).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (2105).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (2111).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (2115).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (2117).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (2136).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (2146).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (2147).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (2149).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (2150).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (2153).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (2154).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (216).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (2162).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (2176).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (2180).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (2184).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (2193).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (2197).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (2202).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (2213).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (2218).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (2219).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (222).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (2222).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (2228).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (2236).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (2237).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (2242).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (2249).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (2260).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (2268).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (2273).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (2277).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (2278).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (2283).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (2285).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (2287).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (2288).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (229).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (2295).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (230).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (2308).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (2316).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (2322).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (2323).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (2324).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (2328).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (2329).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (2352).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (2353).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (2356).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (236).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (2361).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (2369).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (2371).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (2373).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (2378).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (2387).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (2389).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (2400).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (2403).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (2417).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (25).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (250).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (259).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (260).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (267).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (28).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (285).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (290).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (291).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (299).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (307).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (313).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (32).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (334).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (336).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (340).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (342).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (351).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (362).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (388).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (392).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (395).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (397).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (399).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (403).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (404).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (406).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (411).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (416).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (417).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (420).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (425).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (438).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (44).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (443).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (448).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (467).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (47).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (470).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (48).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (482).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (485).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (491).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (506).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (510).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (515).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (516).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (53).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (530).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (555).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (558).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (568).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (58).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (584).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (594).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (595).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (60).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (609).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (610).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (615).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (623).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (624).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (625).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (630).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (635).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (637).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (640).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (651).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (654).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (661).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (673).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (678).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (684).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (685).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (690).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (692).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (694).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (707).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (708).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (712).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (731).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (743).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (751).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (757).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (764).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (768).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (774).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (778).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (779).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (782).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (786).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (807).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (808).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (816).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (819).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (826).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (829).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (83).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (836).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (844).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (847).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (851).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (853).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (857).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (858).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (860).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (87).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (877).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (88).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (888).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (890).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (900).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (906).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (911).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (926).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (927).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (93).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (946).JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (947).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (950).JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (956).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (957).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (962).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (963).JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (964).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (967).JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (968).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (98).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (980).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (981).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (982).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/test/tumor/Cancer (99).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1011).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1017).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1020).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1021).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1023).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1058).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1062).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1064).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1069).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (107).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1072).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1080).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1089).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1094).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1100).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1102).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1109).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1115).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1117).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1121).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1126).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1130).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1134).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1136).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1144).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1153).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1160).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1165).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (118).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1180).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1185).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1189).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1200).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1213).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1218).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1219).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1220).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1224).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1228).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1235).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1239).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1242).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1243).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1250).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1251).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1273).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1276).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1278).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1281).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1283).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1296).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1299).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (13).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1301).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (131).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1314).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1333).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1336).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1339).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1346).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1348).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1352).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1365).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (137).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1382).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1383).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1394).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1398).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1401).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1410).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1412).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1416).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1425).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1429).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1430).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (144).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1448).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (145).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1463).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1472).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1476).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1478).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1483).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1490).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1495).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1500).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1503).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1506).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1507).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1509).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (151).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1520).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1524).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (153).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1551).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1560).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1563).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (157).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (158).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (159).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1591).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1595).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (161).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1610).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1615).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1621).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1626).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1630).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1640).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1645).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1657).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1659).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (166).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1662).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1670).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1675).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1678).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1679).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1682).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1705).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1708).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1709).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1710).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1713).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1716).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1722).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1725).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1727).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1731).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1733).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1739).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1745).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1756).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1766).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1778).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1786).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1787).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1788).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1795).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1804).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1806).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (182).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1820).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1824).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1831).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1839).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (184).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1842).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1849).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (185).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1852).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1862).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1868).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1871).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1881).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1886).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1889).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1892).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1894).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1902).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1903).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1924).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1935).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1937).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1938).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (194).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1940).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (195).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1956).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (196).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1960).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1964).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1965).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1967).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1968).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1975).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1988).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (1996).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (200).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (2005).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (2007).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (2008).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (2010).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (2020).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (2030).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (2037).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (2043).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (2047).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (2056).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (2060).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (2063).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (2064).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (2080).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (209).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (213).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (214).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (216).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (230).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (235).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (244).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (245).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (250).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (251).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (262).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (263).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (264).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (265).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (268).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (269).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (270).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (273).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (283).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (29).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (298).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (299).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (313).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (320).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (321).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (329).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (331).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (348).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (353).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (354).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (355).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (363).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (380).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (382).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (386).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (393).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (41).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (410).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (414).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (419).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (428).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (445).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (459).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (46).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (464).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (467).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (468).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (473).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (482).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (491).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (494).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (503).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (505).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (508).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (547).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (557).JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (559).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (560).JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (567).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (569).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (582).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (583).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (587).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (598).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (60).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (601).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (606).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (612).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (614).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (619).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (621).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (624).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (628).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (63).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (650).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (654).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (655).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (658).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (664).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (668).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (674).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (676).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (678).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (684).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (694).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (70).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (700).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (706).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (71).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (715).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (716).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (726).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (730).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (737).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (738).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (742).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (745).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (751).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (753).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (76).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (760).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (768).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (773).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (784).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (79).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (793).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (795).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (814).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (815).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (821).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (827).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (834).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (845).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (848).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (86).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (863).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (867).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (88).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (887).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (889).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (891).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (894).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (898).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (900).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (91).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (913).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (914).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (918).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (921).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (927).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (929).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (934).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (936).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (940).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (942).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (945).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (962).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (978).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (981).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (983).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/no_tumor/Not Cancer  (999).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1002).JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1009).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1011).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1033).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1041).JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1043).JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1047).JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1051).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1052).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1053).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1061).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1066).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (108).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1082).JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (109).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1093).JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1099).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (110).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1101).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1102).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1103).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1109).JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1112).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1125).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1137).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1140).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1141).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1142).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1156).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1163).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1166).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1170).JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1173).JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1174).JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (118).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1185).JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1187).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1197).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1198).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (120).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1206).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1218).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1220).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1224).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1226).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1227).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1229).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1235).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (124).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1243).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1245).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1246).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1253).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1258).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1261).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1264).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1265).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1272).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1277).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1285).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (13).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1304).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1306).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1319).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1331).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1343).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1349).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1366).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1368).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1369).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1376).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1377).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (138).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1383).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1390).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1398).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1401).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1406).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1413).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1430).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1436).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1439).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1440).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1454).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1455).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1463).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1464).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1468).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1474).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1475).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1479).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (148).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1484).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1487).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1493).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1497).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1503).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1504).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1509).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1520).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1552).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1562).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1565).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1590).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1591).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1596).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1602).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1622).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1631).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1635).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1637).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1638).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1650).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1653).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1660).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1665).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1667).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1678).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1680).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1688).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1689).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1691).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (170).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1713).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1718).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1734).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1737).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1741).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1742).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1744).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1749).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1756).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1760).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1772).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1773).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1777).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1782).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1783).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1784).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1785).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1790).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1809).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1813).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1815).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1823).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1829).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1830).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1833).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1835).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1848).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1855).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1860).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1861).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1863).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1874).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1879).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1881).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1884).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1885).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1887).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1888).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (189).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1893).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (19).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1901).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1907).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1918).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1921).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1927).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1931).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1943).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1945).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1959).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1965).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1985).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (1986).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (199).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2005).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2015).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2021).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2022).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2036).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2039).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2042).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2043).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (205).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2063).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2066).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2073).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2078).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2081).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2085).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2086).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2091).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2098).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2104).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2107).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2118).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2127).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2129).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2130).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2131).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2137).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2141).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2143).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2155).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2156).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2159).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2165).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2172).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2181).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2191).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2195).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2196).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (220).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2220).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2225).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2229).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (223).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2232).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2245).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2253).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2256).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2257).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2262).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2263).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2265).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (227).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2275).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2279).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (228).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2296).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2297).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2303).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2312).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2314).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2318).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2319).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (232).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2334).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2336).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (234).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2344).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2350).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2355).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2359).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2360).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2362).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2364).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2368).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2374).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2377).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2381).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2384).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2398).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (24).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (240).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2402).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2407).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2408).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2418).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (2419).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (242).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (245).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (249).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (256).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (263).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (266).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (278).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (281).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (289).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (295).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (298).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (302).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (304).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (308).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (309).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (310).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (316).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (317).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (341).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (344).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (348).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (35).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (354).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (364).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (367).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (37).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (372).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (374).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (380).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (382).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (386).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (39).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (394).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (405).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (407).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (41).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (415).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (42).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (427).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (440).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (444).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (445).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (452).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (453).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (458).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (472).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (487).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (490).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (517).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (521).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (524).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (539).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (551).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (557).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (56).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (562).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (565).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (567).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (575).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (577).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (581).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (604).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (607).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (608).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (620).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (622).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (626).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (629).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (633).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (642).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (645).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (656).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (676).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (687).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (691).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (709).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (713).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (715).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (720).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (753).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (755).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (77).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (770).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (773).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (78).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (785).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (79).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (795).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (80).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (806).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (813).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (822).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (824).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (828).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (830).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (831).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (838).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (843).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (85).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (850).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (854).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (855).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (862).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (866).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (869).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (874).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (879).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (893).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (895).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (896).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (902).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (912).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (913).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (918).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (932).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (933).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (935).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (941).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (952).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (966).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/binary/train/tumor/Cancer (973).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils_binary/data_loader.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils_binary/data_loader.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,27 +1483,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python.CNN_TUMOR.executor&quot;: &quot;Run&quot;,
-    &quot;Python.api_server.executor&quot;: &quot;Run&quot;,
-    &quot;Python.config.executor&quot;: &quot;Run&quot;,
-    &quot;Python.data_loader.executor&quot;: &quot;Run&quot;,
-    &quot;Python.download_data.executor&quot;: &quot;Run&quot;,
-    &quot;Python.download_kaggle_dataset.executor&quot;: &quot;Run&quot;,
-    &quot;Python.setup_kaggle.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test_api.executor&quot;: &quot;Run&quot;,
-    &quot;Python.train.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;roxana&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.CNN_TUMOR.executor": "Run",
+    "Python.api_server.executor": "Run",
+    "Python.config.executor": "Run",
+    "Python.data_loader.executor": "Run",
+    "Python.download_data.executor": "Run",
+    "Python.download_kaggle_dataset.executor": "Run",
+    "Python.setup_kaggle.executor": "Run",
+    "Python.test_api.executor": "Run",
+    "Python.train.executor": "Run",
+    "Python.train_multiclass.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "roxana"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\roxan\Desktop\LICENTA\Binary CNN" />
       <recent name="C:\Users\roxan\Desktop\LICENTA\Binary CNN\my_test_images" />
       <recent name="C:\Users\roxan\Desktop\LICENTA\Binary CNN\utils" />
     </key>

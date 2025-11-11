@@ -7,6 +7,10 @@ import os
 import numpy as np
 import matplotlib.pyplot as plt
 
+# Define data directory and class labels
+data_dir = "data/binary"  # Update this path as needed
+CLA_label = {0: "No Tumor", 1: "Tumor"}  # Binary classification labels
+
 # Transformări pentru antrenament (cu augmentări)
 train_transform = transforms.Compose([
     transforms.Resize((256, 256)),
@@ -27,6 +31,10 @@ test_transform = transforms.Compose([
 # Păstrează pentru compatibilitate
 transform = train_transform
 
+
+def load_and_visualize():
+    """Load data and display sample images"""
+    train_set = torchvision.datasets.ImageFolder(os.path.join(data_dir, "train"), transform=transform)
     test_set = torchvision.datasets.ImageFolder(os.path.join(data_dir, "test"), transform=transform)
 
     print(train_set.classes)
@@ -61,12 +69,9 @@ transform = train_transform
             break
 
 
-
-
 def get_dataloaders(batch_size=64, num_workers=0):
     """
     Return (train_loader, test_loader). Use num_workers=0 on Windows for safety.
-    Relies on existing `transform` and `data_dir` defined in this module.
     """
     train_set = torchvision.datasets.ImageFolder(os.path.join(data_dir, "train"), transform=transform)
     test_set = torchvision.datasets.ImageFolder(os.path.join(data_dir, "test"), transform=transform)
