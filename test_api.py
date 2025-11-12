@@ -43,6 +43,18 @@ def test_predict_multipart():
             print(f"\n✅ Prediction: {result['prediction']}")
             print(f"✅ Has Tumor: {result['has_tumor']}")
             print(f"✅ Confidence: {result['confidence'] * 100:.2f}%")
+
+            # Check for tumor type if tumor is detected
+            if result.get('has_tumor'):
+                if 'tumor_type' in result:
+                    print(f"✅ Tumor Type: {result['tumor_type']}")
+                    print(f"✅ Tumor Type Confidence: {result['tumor_type_confidence'] * 100:.2f}%")
+                    print(f"✅ Tumor Type Probabilities:")
+                    for label, prob in result.get('tumor_type_probabilities', {}).items():
+                        print(f"   - {label}: {prob * 100:.2f}%")
+                else:
+                    print(f"⚠️ WARNING: Tumor detected but no tumor type provided!")
+
             return True
         else:
             print(f"\n❌ Prediction failed: {result.get('error')}")

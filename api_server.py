@@ -11,6 +11,13 @@ import io
 import base64
 import os
 import logging
+import sys
+
+from werkzeug.debug import console
+
+# Add models directory to path
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+from models.CNN_TUMOR_MULTICLASS import TumorClassifier
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -19,12 +26,14 @@ logger = logging.getLogger(__name__)
 app = Flask(__name__)
 CORS(app)  # Enable CORS for Angular frontend
 
-# Model path
-MODEL_PATH = 'Brain_Tumor_model.pt'
+# Model paths
+BINARY_MODEL_PATH = 'Brain_Tumor_model.pt'
+MULTICLASS_MODEL_PATH = 'best_model_multiclass.pth'
 DEVICE = 'cuda' if torch.cuda.is_available() else 'cpu'
 
-# Load model at startup
-model = None
+# Load models at startup
+binary_model = None
+multiclass_model = None
 
 # Image transformations (same as training)
 test_transform = transforms.Compose([
@@ -33,66 +42,158 @@ test_transform = transforms.Compose([
     transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
 ])
 
-# Class labels
-CLASS_LABELS = {
+# Transformations for multiclass model
+multiclass_transform = transforms.Compose([
+    transforms.Resize((224, 224)),
+    transforms.ToTensor(),
+    transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
+])
+
+# Class labels for binary model
+BINARY_CLASS_LABELS = {
     0: 'no_tumor',
     1: 'tumor'
 }
 
+# Class labels for multiclass model (tumor types)
+MULTICLASS_LABELS = ['glioma', 'meningioma', 'notumor', 'pituitary']
 
-def load_model():
-    """Load the trained model"""
-    global model
+
+def load_models():
+    """Load both binary and multiclass models"""
+    global binary_model, multiclass_model
     try:
-        if not os.path.exists(MODEL_PATH):
-            raise FileNotFoundError(f"Model not found: {MODEL_PATH}")
-
         device = torch.device(DEVICE)
-        model = torch.load(MODEL_PATH, map_location=device, weights_only=False)
-        model.to(device)
-        model.eval()
-        logger.info(f"Model loaded successfully on {DEVICE}")
+
+        # Load binary model (saved as full model)
+        if not os.path.exists(BINARY_MODEL_PATH):
+            raise FileNotFoundError(f"Binary model not found: {BINARY_MODEL_PATH}")
+
+        binary_model = torch.load(BINARY_MODEL_PATH, map_location=device, weights_only=False)
+        binary_model.to(device)
+        binary_model.eval()
+        logger.info(f"Binary model loaded successfully on {DEVICE}")
+
+        # Load multiclass model (saved as state dict)
+        if not os.path.exists(MULTICLASS_MODEL_PATH):
+            raise FileNotFoundError(f"Multiclass model not found: {MULTICLASS_MODEL_PATH}")
+
+        # Instantiate the model architecture
+        multiclass_model = TumorClassifier(num_classes=4, input_size=224)
+
+        # Load the state dictionary
+        state_dict = torch.load(MULTICLASS_MODEL_PATH, map_location=device, weights_only=False)
+
+        # Handle both cases: full model or state dict
+        if isinstance(state_dict, dict) and 'state_dict' not in state_dict:
+            # It's a state dict directly
+            multiclass_model.load_state_dict(state_dict)
+        elif isinstance(state_dict, dict) and 'state_dict' in state_dict:
+            # It's a checkpoint with state_dict key
+            multiclass_model.load_state_dict(state_dict['state_dict'])
+        else:
+            # It might be the full model
+            multiclass_model = state_dict
+
+        multiclass_model.to(device)
+        multiclass_model.eval()
+        logger.info(f"Multiclass model loaded successfully on {DEVICE}")
+
         return True
     except Exception as e:
-        logger.error(f"Error loading model: {e}")
+        logger.error(f"Error loading models: {e}")
+        import traceback
+        traceback.print_exc()
         return False
 
 
 def predict_image(image):
     """
-    Predict tumor presence in an image
+    Predict tumor presence in an image and tumor type if present
 
     Args:
         image: PIL Image object
 
     Returns:
-        dict: Prediction results
+        dict: Prediction results including tumor type if tumor is detected
     """
     try:
-        model.eval()
-        # Preprocess image
+        device = torch.device(DEVICE)
+
+        # Step 1: Binary classification - Check if tumor exists
+        binary_model.eval()
         image_tensor = test_transform(image).unsqueeze(0)
-        image_tensor = image_tensor.to(torch.device(DEVICE))
+        image_tensor = image_tensor.to(device)
 
-        # Make prediction
-        with   torch.no_grad():
-            outputs = model(image_tensor)
-            probabilities = torch.exp(outputs)  # Model returns log_softmax
-            predicted_class = torch.argmax(probabilities, dim=1).item()
-            confidence = probabilities[0][predicted_class].item()
+        with torch.no_grad():
+            binary_outputs = binary_model(image_tensor)
+            binary_probabilities = torch.exp(binary_outputs)  # Model returns log_softmax
+            predicted_class = torch.argmax(binary_probabilities, dim=1).item()
+            binary_confidence = binary_probabilities[0][predicted_class].item()
 
-        return {
+        logger.info(f"Binary prediction: {BINARY_CLASS_LABELS[predicted_class]} (confidence: {binary_confidence:.4f})")
+
+        result = {
             'success': True,
-            'prediction': CLASS_LABELS[predicted_class],
+            'prediction': BINARY_CLASS_LABELS[predicted_class],
             'has_tumor': predicted_class == 1,
-            'confidence': float(confidence),
+            'confidence': float(binary_confidence),
             'probabilities': {
-                'no_tumor': float(probabilities[0][0].item()),
-                'tumor': float(probabilities[0][1].item())
+                'no_tumor': float(binary_probabilities[0][0].item()),
+                'tumor': float(binary_probabilities[0][1].item())
             }
         }
+
+        # Step 2: If tumor detected, classify tumor type
+        if predicted_class == 1:  # Tumor detected
+            multiclass_model.eval()
+            multiclass_tensor = multiclass_transform(image).unsqueeze(0)
+            multiclass_tensor = multiclass_tensor.to(device)
+
+            with torch.no_grad():
+                multiclass_outputs = multiclass_model(multiclass_tensor)
+                multiclass_probabilities = torch.softmax(multiclass_outputs, dim=1)
+
+                # Get all probabilities
+                all_probs = {
+                    label: float(multiclass_probabilities[0][i].item())
+                    for i, label in enumerate(MULTICLASS_LABELS)
+                }
+
+                # Filter out 'notumor' class and get tumor types only
+                tumor_type_probs = {
+                    label: prob for label, prob in all_probs.items()
+                    if label != 'notumor'
+                }
+
+                # Renormalize probabilities after removing 'notumor'
+                tumor_probs_sum = sum(tumor_type_probs.values())
+                normalized_tumor_probs = {
+                    label: prob / tumor_probs_sum
+                    for label, prob in tumor_type_probs.items()
+                }
+
+                # Get the tumor type with highest probability (excluding 'notumor')
+                tumor_type = max(normalized_tumor_probs.items(), key=lambda x: x[1])
+
+                logger.info(f"Tumor type prediction: {tumor_type[0]} (confidence: {tumor_type[1]:.4f})")
+                logger.info(f"Normalized tumor type probabilities: {normalized_tumor_probs}")
+
+            # Add tumor type information to result
+            result['tumor_type'] = tumor_type[0]
+            result['tumor_type_confidence'] = float(tumor_type[1])
+            result['tumor_type_probabilities'] = normalized_tumor_probs
+            result['raw_multiclass_probabilities'] = all_probs  # Keep raw probabilities for debugging
+
+        logger.info(f"Final result: {result['prediction']}" +
+                   (f" -> {result.get('tumor_type', 'N/A')}" if result['has_tumor'] else ""))
+        logger.info(f"Result details: {result}")
+        return result
+
     except Exception as e:
         logger.error(f"Prediction error: {e}")
+        import traceback
+        logger.error(traceback.format_exc())
         return {
             'success': False,
             'error': str(e)
@@ -104,7 +205,8 @@ def health_check():
     """Health check endpoint"""
     return jsonify({
         'status': 'healthy',
-        'model_loaded': model is not None,
+        'binary_model_loaded': binary_model is not None,
+        'multiclass_model_loaded': multiclass_model is not None,
         'device': DEVICE
     })
 
@@ -123,10 +225,10 @@ def predict():
     - JSON with prediction results
     """
     try:
-        if model is None:
+        if binary_model is None or multiclass_model is None:
             return jsonify({
                 'success': False,
-                'error': 'Model not loaded'
+                'error': 'Models not loaded'
             }), 500
 
         image = None
@@ -196,10 +298,10 @@ def batch_predict():
     - JSON with array of prediction results
     """
     try:
-        if model is None:
+        if binary_model is None or multiclass_model is None:
             return jsonify({
                 'success': False,
-                'error': 'Model not loaded'
+                'error': 'Models not loaded'
             }), 500
 
         if 'files' not in request.files:
@@ -239,12 +341,11 @@ def batch_predict():
 
 
 if __name__ == '__main__':
-    # Load model on startup
-    if not load_model():
-        logger.error("Failed to load model. Server will not start.")
+    # Load models on startup
+    if not load_models():
+        logger.error("Failed to load models. Server will not start.")
         exit(1)
 
     # Start server
     logger.info("Starting Flask server on http://localhost:5000")
     app.run(host='0.0.0.0', port=5000, debug=False)
-
