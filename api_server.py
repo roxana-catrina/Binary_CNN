@@ -56,7 +56,7 @@ BINARY_CLASS_LABELS = {
 }
 
 # Class labels for multiclass model (tumor types)
-MULTICLASS_LABELS = ['glioma', 'meningioma', 'notumor', 'pituitary']
+MULTICLASS_LABELS = ['glioma', 'meningioma', 'pituitary']
 
 
 def load_models():
@@ -79,7 +79,7 @@ def load_models():
             raise FileNotFoundError(f"Multiclass model not found: {MULTICLASS_MODEL_PATH}")
 
         # Instantiate the model architecture
-        multiclass_model = TumorClassifier(num_classes=4, input_size=224)
+        multiclass_model = TumorClassifier(num_classes=3, input_size=224)
 
         # Load the state dictionary
         state_dict = torch.load(MULTICLASS_MODEL_PATH, map_location=device, weights_only=False)
@@ -154,36 +154,22 @@ def predict_image(image):
                 multiclass_outputs = multiclass_model(multiclass_tensor)
                 multiclass_probabilities = torch.softmax(multiclass_outputs, dim=1)
 
-                # Get all probabilities
-                all_probs = {
+                # Get all probabilities for the 3 tumor types
+                tumor_type_probs = {
                     label: float(multiclass_probabilities[0][i].item())
                     for i, label in enumerate(MULTICLASS_LABELS)
                 }
 
-                # Filter out 'notumor' class and get tumor types only
-                tumor_type_probs = {
-                    label: prob for label, prob in all_probs.items()
-                    if label != 'notumor'
-                }
-
-                # Renormalize probabilities after removing 'notumor'
-                tumor_probs_sum = sum(tumor_type_probs.values())
-                normalized_tumor_probs = {
-                    label: prob / tumor_probs_sum
-                    for label, prob in tumor_type_probs.items()
-                }
-
-                # Get the tumor type with highest probability (excluding 'notumor')
-                tumor_type = max(normalized_tumor_probs.items(), key=lambda x: x[1])
+                # Get the tumor type with highest probability
+                tumor_type = max(tumor_type_probs.items(), key=lambda x: x[1])
 
                 logger.info(f"Tumor type prediction: {tumor_type[0]} (confidence: {tumor_type[1]:.4f})")
-                logger.info(f"Normalized tumor type probabilities: {normalized_tumor_probs}")
+                logger.info(f"Tumor type probabilities: {tumor_type_probs}")
 
             # Add tumor type information to result
             result['tumor_type'] = tumor_type[0]
             result['tumor_type_confidence'] = float(tumor_type[1])
-            result['tumor_type_probabilities'] = normalized_tumor_probs
-            result['raw_multiclass_probabilities'] = all_probs  # Keep raw probabilities for debugging
+            result['tumor_type_probabilities'] = tumor_type_probs
 
         logger.info(f"Final result: {result['prediction']}" +
                    (f" -> {result.get('tumor_type', 'N/A')}" if result['has_tumor'] else ""))
