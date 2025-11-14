@@ -1,6 +1,10 @@
 import torch.nn as nn
-from utils_binary.findConv2dOutShape import findConv2dOutShape
+
 import torch.nn.functional as F
+
+from Binary_CNN.utils_binary.findConv2dOutShape import findConv2dOutShape
+
+
 # Define Architecture For CNN_TUMOR Model
 class CNN_TUMOR(nn.Module):
 

@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 
 class TumorClassifier(nn.Module):
-    def __init__(self, num_classes=4, input_size=224):
+    def __init__(self, num_classes=3, input_size=224):
         super(TumorClassifier, self).__init__()
 
         self.features = nn.Sequential(
@@ -65,6 +65,6 @@ class TumorClassifier(nn.Module):
 
 
 # Creează modelul
-model = TumorClassifier(num_classes=4, input_size=224)
+model = TumorClassifier(num_classes=3, input_size=224)
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 model.to(device)
