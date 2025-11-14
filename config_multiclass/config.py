@@ -6,10 +6,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_DIR = os.path.join(BASE_DIR, 'data')
 MULTICLASS_DIR = os.path.join(DATA_DIR, 'multiclass')
 
-# Kaggle dataset for multiclass brain tumor MRI
-KAGGLE_DATASET = 'masoudnickparvar/brain-tumor-mri-dataset'
-
-# Raw data directories (will be extracted from Kaggle)
+# Data directories
 TRAIN_DIR = os.path.join(MULTICLASS_DIR, 'Training')
 TEST_DIR = os.path.join(MULTICLASS_DIR, 'Testing')
 

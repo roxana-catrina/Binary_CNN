@@ -15,7 +15,7 @@ def main():
     print(f'[DEBUG] Train batches: {len(train_loader)}, Val batches: {len(val_loader)}')
 
     # Model, loss, optimizer
-    model = TumorClassifier(num_classes=4, input_size=224)
+    model = TumorClassifier(num_classes=3, input_size=224)
     model = model.to(device)
     print(f'[DEBUG] Model moved to device. Model summary (repr):')
     print(repr(model))
