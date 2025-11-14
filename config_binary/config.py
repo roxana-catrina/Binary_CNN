@@ -1,3 +1,4 @@
+# python
 import os
 import shutil
 import random
@@ -6,15 +7,12 @@ from torchsummary import summary
 
 import torch
 
-from models.CNN_TUMOR import CNN_TUMOR
+from Binary_CNN.models.CNN_TUMOR import CNN_TUMOR
 
 # Base paths
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_DIR = os.path.join(BASE_DIR, 'data')
 RAW_DIR = os.path.join(DATA_DIR, 'binary')
-
-# Kaggle dataset
-KAGGLE_DATASET = 'preetviradiya/brian-tumor-dataset'
 
 # Raw data directories
 RAW_TUMOR_DIR = os.path.join(RAW_DIR, 'tumor')
