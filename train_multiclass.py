@@ -59,6 +59,7 @@ def main():
             if batch_idx % 10 == 0 or batch_idx == 1:
                 print(f'[DEBUG] Epoch {epoch+1} Batch {batch_idx}/{len(train_loader)} - loss: {loss.item():.4f}, inputs.shape: {tuple(inputs.shape)}')
 
+        train_loss /= len(train_loader) if len(train_loader) > 0 else 1.0
         train_accuracy = correct / total if total > 0 else 0.0
         train_losses.append(train_loss)
         train_accuracies.append(train_accuracy)

@@ -7,7 +7,7 @@ from torchsummary import summary
 
 import torch
 
-from Binary_CNN.models.CNN_TUMOR import CNN_TUMOR
+from models.CNN_TUMOR import CNN_TUMOR
 
 # Base paths
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
