@@ -1,6 +1,7 @@
 import torch
 from matplotlib import pyplot as plt
 from torch import nn, optim
+from torch.optim.lr_scheduler import ReduceLROnPlateau
 
 from models.CNN_TUMOR_MULTICLASS import TumorClassifier
 from utils_multilclass.data_loader import get_dataloaders
@@ -21,7 +22,10 @@ def main():
     print(repr(model))
 
     criterion = nn.CrossEntropyLoss()
-    optimizer = optim.Adam(model.parameters(), lr=0.001)
+    optimizer = optim.Adam(model.parameters(), lr=0.001, weight_decay=1e-4)
+
+    # Learning rate scheduler - reduces LR when validation loss plateaus
+    scheduler = ReduceLROnPlateau(optimizer, mode='min', factor=0.5, patience=3, verbose=True)
 
     # Initialize lists to store training history
     train_losses = []
@@ -29,10 +33,15 @@ def main():
     train_accuracies = []
     val_accuracies = []
 
+    # Early stopping parameters
+    early_stopping_patience = 10
+    early_stopping_counter = 0
+
     # Training loop
-    num_epochs = 20
+    num_epochs = 50  # Increased from 20
     best_val_accuracy = 0.0
-    print(f'[DEBUG] Starting training for {num_epochs} epochs')
+    best_val_loss = float('inf')
+    print(f'[DEBUG] Starting training for {num_epochs} epochs with early stopping')
 
     for epoch in range(num_epochs):
         print(f'[DEBUG] Epoch {epoch + 1}/{num_epochs} - starting')
@@ -86,15 +95,28 @@ def main():
         val_losses.append(val_loss)
         val_accuracies.append(val_accuracy)
 
+        # Step the learning rate scheduler
+        scheduler.step(val_loss)
+
         print(f'Epoch [{epoch + 1}/{num_epochs}], '
               f'Training Loss: {train_loss:.4f}, Training Accuracy: {train_accuracy:.2%}, '
               f'Validation Loss: {val_loss:.4f}, Validation Accuracy: {val_accuracy:.2%}')
 
-        # Save the best model
+        # Save the best model based on validation accuracy
         if val_accuracy > best_val_accuracy:
             best_val_accuracy = val_accuracy
+            best_val_loss = val_loss
+            early_stopping_counter = 0
             torch.save(model.state_dict(), 'best_model_multiclass.pth')
-            print(f'[DEBUG] New best model saved with val_accuracy: {best_val_accuracy:.2%}')
+            print(f'[DEBUG] New best model saved with val_accuracy: {best_val_accuracy:.2%}, val_loss: {best_val_loss:.4f}')
+        else:
+            early_stopping_counter += 1
+            print(f'[DEBUG] No improvement. Early stopping counter: {early_stopping_counter}/{early_stopping_patience}')
+
+        # Early stopping
+        if early_stopping_counter >= early_stopping_patience:
+            print(f'[DEBUG] Early stopping triggered after {epoch + 1} epochs')
+            break
 
     accuracy = correct / total if total > 0 else 0.0
     print(f'Validation Accuracy: {accuracy:.2%}')
