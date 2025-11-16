@@ -13,11 +13,35 @@ import os
 import logging
 import sys
 
-from werkzeug.debug import console
-
 # Add models directory to path
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+# Add project root to Python path
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+if PROJECT_ROOT not in sys.path:
+    sys.path.insert(0, PROJECT_ROOT)
+
+# Also add parent directory if Binary_CNN is one level up
+PARENT_DIR = os.path.dirname(PROJECT_ROOT)
+if PARENT_DIR not in sys.path:
+    sys.path.insert(0, PARENT_DIR)
+
+# Import modules first
+import models
+import models.CNN_TUMOR
+import models.CNN_TUMOR_MULTICLASS
+import utils_binary
+import utils_binary.findConv2dOutShape
+
+# Create Binary_CNN module alias to fix module loading issue
+# This is needed because the binary model was saved with Binary_CNN module references
+sys.modules['Binary_CNN'] = sys.modules[__name__]
+sys.modules['Binary_CNN.models'] = models
+sys.modules['Binary_CNN.models.CNN_TUMOR'] = models.CNN_TUMOR
+sys.modules['Binary_CNN.models.CNN_TUMOR_MULTICLASS'] = models.CNN_TUMOR_MULTICLASS
+sys.modules['Binary_CNN.utils_binary'] = utils_binary
+sys.modules['Binary_CNN.utils_binary.findConv2dOutShape'] = utils_binary.findConv2dOutShape
+
 from models.CNN_TUMOR_MULTICLASS import TumorClassifier
+from models.CNN_TUMOR import CNN_TUMOR
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
