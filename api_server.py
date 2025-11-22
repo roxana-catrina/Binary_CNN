@@ -28,6 +28,7 @@ if PARENT_DIR not in sys.path:
 import models
 import models.CNN_TUMOR
 import models.CNN_TUMOR_MULTICLASS
+import models.HYBRID_MODEL
 import utils_binary
 import utils_binary.findConv2dOutShape
 
@@ -37,10 +38,12 @@ sys.modules['Binary_CNN'] = sys.modules[__name__]
 sys.modules['Binary_CNN.models'] = models
 sys.modules['Binary_CNN.models.CNN_TUMOR'] = models.CNN_TUMOR
 sys.modules['Binary_CNN.models.CNN_TUMOR_MULTICLASS'] = models.CNN_TUMOR_MULTICLASS
+sys.modules['Binary_CNN.models.HYBRID_MODEL'] = models.HYBRID_MODEL
 sys.modules['Binary_CNN.utils_binary'] = utils_binary
 sys.modules['Binary_CNN.utils_binary.findConv2dOutShape'] = utils_binary.findConv2dOutShape
 
 from models.CNN_TUMOR_MULTICLASS import TumorClassifier
+from models.HYBRID_MODEL import HybridTumorClassifier
 from models.CNN_TUMOR import CNN_TUMOR
 
 # Configure logging
@@ -52,12 +55,12 @@ CORS(app)  # Enable CORS for Angular frontend
 
 # Model paths
 BINARY_MODEL_PATH = 'Brain_Tumor_model.pt'
-MULTICLASS_MODEL_PATH = 'best_model_multiclass.pth'
+HYBRID_MODEL_PATH = 'best_hybrid_model_hybrid_concat.pth'
 DEVICE = 'cuda' if torch.cuda.is_available() else 'cpu'
 
 # Load models at startup
 binary_model = None
-multiclass_model = None
+hybrid_model = None
 
 # Image transformations (same as training)
 test_transform = transforms.Compose([
@@ -66,8 +69,8 @@ test_transform = transforms.Compose([
     transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
 ])
 
-# Transformations for multiclass model
-multiclass_transform = transforms.Compose([
+# Transformations for hybrid model (same as multiclass: 224x224)
+hybrid_transform = transforms.Compose([
     transforms.Resize((224, 224)),
     transforms.ToTensor(),
     transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
@@ -79,13 +82,13 @@ BINARY_CLASS_LABELS = {
     1: 'tumor'
 }
 
-# Class labels for multiclass model (tumor types)
-MULTICLASS_LABELS = ['glioma', 'meningioma', 'pituitary']
+# Class labels for hybrid model (tumor types)
+HYBRID_LABELS = ['glioma', 'meningioma', 'pituitary']
 
 
 def load_models():
-    """Load both binary and multiclass models"""
-    global binary_model, multiclass_model
+    """Load both binary and hybrid models"""
+    global binary_model, hybrid_model
     try:
         device = torch.device(DEVICE)
 
@@ -98,30 +101,35 @@ def load_models():
         binary_model.eval()
         logger.info(f"Binary model loaded successfully on {DEVICE}")
 
-        # Load multiclass model (saved as state dict)
-        if not os.path.exists(MULTICLASS_MODEL_PATH):
-            raise FileNotFoundError(f"Multiclass model not found: {MULTICLASS_MODEL_PATH}")
+        # Load hybrid model (saved as state dict)
+        if not os.path.exists(HYBRID_MODEL_PATH):
+            raise FileNotFoundError(f"Hybrid model not found: {HYBRID_MODEL_PATH}")
 
         # Instantiate the model architecture
-        multiclass_model = TumorClassifier(num_classes=3, input_size=224)
+        hybrid_model = HybridTumorClassifier(num_classes=3, input_size=224, fusion_type='concat')
 
-        # Load the state dictionary
-        state_dict = torch.load(MULTICLASS_MODEL_PATH, map_location=device, weights_only=False)
+        # Load the checkpoint
+        checkpoint = torch.load(HYBRID_MODEL_PATH, map_location=device, weights_only=False)
 
-        # Handle both cases: full model or state dict
-        if isinstance(state_dict, dict) and 'state_dict' not in state_dict:
-            # It's a state dict directly
-            multiclass_model.load_state_dict(state_dict)
-        elif isinstance(state_dict, dict) and 'state_dict' in state_dict:
-            # It's a checkpoint with state_dict key
-            multiclass_model.load_state_dict(state_dict['state_dict'])
+        # Handle different checkpoint formats
+        if isinstance(checkpoint, dict):
+            if 'model_state_dict' in checkpoint:
+                # Training checkpoint format with model_state_dict key
+                hybrid_model.load_state_dict(checkpoint['model_state_dict'])
+                logger.info(f"Loaded hybrid model from training checkpoint (epoch: {checkpoint.get('epoch', 'unknown')})")
+            elif 'state_dict' in checkpoint:
+                # Checkpoint with state_dict key
+                hybrid_model.load_state_dict(checkpoint['state_dict'])
+            else:
+                # It's a state dict directly
+                hybrid_model.load_state_dict(checkpoint)
         else:
             # It might be the full model
-            multiclass_model = state_dict
+            hybrid_model = checkpoint
 
-        multiclass_model.to(device)
-        multiclass_model.eval()
-        logger.info(f"Multiclass model loaded successfully on {DEVICE}")
+        hybrid_model.to(device)
+        hybrid_model.eval()
+        logger.info(f"Hybrid model loaded successfully on {DEVICE}")
 
         return True
     except Exception as e:
@@ -170,18 +178,18 @@ def predict_image(image):
 
         # Step 2: If tumor detected, classify tumor type
         if predicted_class == 1:  # Tumor detected
-            multiclass_model.eval()
-            multiclass_tensor = multiclass_transform(image).unsqueeze(0)
-            multiclass_tensor = multiclass_tensor.to(device)
+            hybrid_model.eval()
+            hybrid_tensor = hybrid_transform(image).unsqueeze(0)
+            hybrid_tensor = hybrid_tensor.to(device)
 
             with torch.no_grad():
-                multiclass_outputs = multiclass_model(multiclass_tensor)
-                multiclass_probabilities = torch.softmax(multiclass_outputs, dim=1)
+                hybrid_outputs = hybrid_model(hybrid_tensor)
+                hybrid_probabilities = torch.softmax(hybrid_outputs, dim=1)
 
                 # Get all probabilities for the 3 tumor types
                 tumor_type_probs = {
-                    label: float(multiclass_probabilities[0][i].item())
-                    for i, label in enumerate(MULTICLASS_LABELS)
+                    label: float(hybrid_probabilities[0][i].item())
+                    for i, label in enumerate(HYBRID_LABELS)
                 }
 
                 # Get the tumor type with highest probability
@@ -216,7 +224,7 @@ def health_check():
     return jsonify({
         'status': 'healthy',
         'binary_model_loaded': binary_model is not None,
-        'multiclass_model_loaded': multiclass_model is not None,
+        'hybrid_model_loaded': hybrid_model is not None,
         'device': DEVICE
     })
 
@@ -235,7 +243,7 @@ def predict():
     - JSON with prediction results
     """
     try:
-        if binary_model is None or multiclass_model is None:
+        if binary_model is None or hybrid_model is None:
             return jsonify({
                 'success': False,
                 'error': 'Models not loaded'
@@ -308,7 +316,7 @@ def batch_predict():
     - JSON with array of prediction results
     """
     try:
-        if binary_model is None or multiclass_model is None:
+        if binary_model is None or hybrid_model is None:
             return jsonify({
                 'success': False,
                 'error': 'Models not loaded'

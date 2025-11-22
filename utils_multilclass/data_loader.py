@@ -6,11 +6,15 @@ from matplotlib import pyplot as plt
 from torch.utils.data import DataLoader
 from torchvision.datasets import ImageFolder
 
-# Data preprocessing and augmentation for training
+# Data preprocessing and augmentation for training (IMPROVED)
 train_transforms = transforms.Compose([
-    transforms.Resize((224, 224)),
+    transforms.Resize((256, 256)),  # Resize bigger first
+    transforms.RandomCrop((224, 224)),  # Then random crop
     transforms.RandomHorizontalFlip(),
-    transforms.RandomRotation(10),
+    transforms.RandomVerticalFlip(p=0.3),  # Add vertical flip
+    transforms.RandomRotation(20),  # More rotation
+    transforms.ColorJitter(brightness=0.2, contrast=0.2, saturation=0.2, hue=0.1),  # Color augmentation
+    transforms.RandomAffine(degrees=0, translate=(0.1, 0.1), scale=(0.9, 1.1)),  # Affine transformations
     transforms.ToTensor(),
     transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
 ])
@@ -22,7 +26,7 @@ test_transforms = transforms.Compose([
     transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
 ])
 
-def get_dataloaders(batch_size=16, num_workers=0):
+def get_dataloaders(batch_size=32, num_workers=0):
     """
     Returns train and test dataloaders for multiclass classification
     """
