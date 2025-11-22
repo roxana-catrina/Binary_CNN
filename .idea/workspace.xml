@@ -6,12 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="78733b6d-a2a2-45ea-8e5f-adca9ff42155" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/INSTRUCTIONS.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README_TUMOR_TYPE.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/api_server.py" beforeDir="false" afterPath="$PROJECT_DIR$/api_server.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config_binary/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config_binary/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/CNN_TUMOR.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/CNN_TUMOR.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/train_multiclass.py" beforeDir="false" afterPath="$PROJECT_DIR$/train_multiclass.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,28 +43,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python.CNN_TUMOR.executor&quot;: &quot;Run&quot;,
-    &quot;Python.api_server.executor&quot;: &quot;Run&quot;,
-    &quot;Python.config.executor&quot;: &quot;Run&quot;,
-    &quot;Python.data_loader.executor&quot;: &quot;Run&quot;,
-    &quot;Python.download_data.executor&quot;: &quot;Run&quot;,
-    &quot;Python.download_kaggle_dataset.executor&quot;: &quot;Run&quot;,
-    &quot;Python.setup_kaggle.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test_api.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test_model_loading.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test_tumor_type_api.executor&quot;: &quot;Run&quot;,
-    &quot;Python.train.executor&quot;: &quot;Run&quot;,
-    &quot;Python.train_multiclass.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;roxana&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.CNN_TUMOR.executor": "Run",
+    "Python.api_server.executor": "Run",
+    "Python.config.executor": "Run",
+    "Python.data_loader.executor": "Run",
+    "Python.download_data.executor": "Run",
+    "Python.download_kaggle_dataset.executor": "Run",
+    "Python.setup_kaggle.executor": "Run",
+    "Python.test_api.executor": "Run",
+    "Python.test_comprehensive.executor": "Run",
+    "Python.test_hybrid_loading.executor": "Run",
+    "Python.test_model_loading.executor": "Run",
+    "Python.test_tumor_type_api.executor": "Run",
+    "Python.train.executor": "Run",
+    "Python.train_multiclass.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "resNet"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\roxan\Desktop\LICENTA\Binary CNN\data\binary\train\tumor" />
