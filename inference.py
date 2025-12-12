@@ -4,6 +4,8 @@ from PIL import Image
 from torchvision import transforms
 import os
 import sys
+import numpy as np
+from dicom_processor import DicomProcessor
 
 # No need to import CNN_TUMOR since we load the entire model object
 
@@ -43,9 +45,29 @@ def predict_image(image_path, model_path, device='cpu'):
     if not os.path.exists(image_path):
         raise FileNotFoundError(f"Image not found: {image_path}")
 
-    # Încarcă și preprocesează imaginea
-    image = Image.open(image_path).convert('RGB')
-    image_tensor = test_transform(image).unsqueeze(0)  # Adaugă batch dimension
+    # Check if it's a DICOM file
+    is_dicom = image_path.lower().endswith(('.dcm', '.dicom'))
+
+    if is_dicom:
+        # Process DICOM file
+        dicom_processor = DicomProcessor()
+        pixel_array = dicom_processor.read_dicom_file(image_path)
+        if pixel_array is None:
+            raise ValueError('Error reading DICOM file')
+
+        # Convert pixel array to PIL Image
+        if len(pixel_array.shape) == 2:
+            # Grayscale DICOM
+            image = Image.fromarray(pixel_array).convert('RGB')
+        else:
+            # Already RGB/color
+            image = Image.fromarray(pixel_array)
+    else:
+        # Process normal image (JPG, PNG)
+        image = Image.open(image_path).convert('RGB')
+
+    # Apply transformations
+    image_tensor = test_transform(image).unsqueeze(0)  # Add batch dimension
 
     # Încarcă modelul
     device = torch.device(device)
