@@ -5,15 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="78733b6d-a2a2-45ea-8e5f-adca9ff42155" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/debug_java_upload.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dicom_processor.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_dicom_integration.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_java_backend.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Binary CNN.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Binary CNN.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api_server.py" beforeDir="false" afterPath="$PROJECT_DIR$/api_server.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inference.py" beforeDir="false" afterPath="$PROJECT_DIR$/inference.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/CNN_TUMOR.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/CNN_TUMOR.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/CNN_TUMOR_MULTICLASS.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/CNN_TUMOR_MULTICLASS.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/HYBRID_MODEL.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/HYBRID_MODEL.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/train_hybrid.py" beforeDir="false" afterPath="$PROJECT_DIR$/train_hybrid.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,13 +63,21 @@
     &quot;Python.test_model_loading.executor&quot;: &quot;Run&quot;,
     &quot;Python.test_tumor_type_api.executor&quot;: &quot;Run&quot;,
     &quot;Python.train.executor&quot;: &quot;Run&quot;,
+    &quot;Python.train_hybrid.executor&quot;: &quot;Run&quot;,
     &quot;Python.train_multiclass.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;dicom&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;
+    &quot;git-widget-placeholder&quot;: &quot;retusare&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/roxan/Desktop/LICENTA/Binary_CNN&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -87,6 +92,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
+        <option value="bundled-js-predefined-d6986cc7102b-09060db00ec0-JavaScript-PY-251.28774.16" />
         <option value="bundled-python-sdk-14d54ed193d7-64d779b69b7a-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-251.28774.16" />
       </set>
     </attachedChunks>
@@ -98,8 +104,22 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1761482011686</updated>
+      <workItem from="1773060150614" duration="2344000" />
+      <workItem from="1773128063610" duration="1356000" />
+      <workItem from="1773215779212" duration="4268000" />
+      <workItem from="1773315903840" duration="639000" />
+      <workItem from="1774599183779" duration="1494000" />
+      <workItem from="1774602125813" duration="951000" />
+      <workItem from="1774606528447" duration="1697000" />
+      <workItem from="1776349522421" duration="801000" />
+      <workItem from="1776408592540" duration="2435000" />
+      <workItem from="1776411232670" duration="254000" />
+      <workItem from="1776430182406" duration="1710000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -111,5 +131,9 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Binary_CNN$train_hybrid.coverage" NAME="train_hybrid Coverage Results" MODIFIED="1774606865350" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Binary_CNN$api_server.coverage" NAME="api_server Coverage Results" MODIFIED="1776430189305" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

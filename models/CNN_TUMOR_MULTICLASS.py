@@ -47,7 +47,7 @@ class TumorClassifier(nn.Module):
             nn.Dropout2d(0.3),
         )
 
-        # Calculează dimensiunea automată
+
         self.feature_size = self._get_conv_output(input_size)
 
         self.classifier = nn.Sequential(
@@ -67,7 +67,7 @@ class TumorClassifier(nn.Module):
         )
 
     def _get_conv_output(self, input_size):
-        """Calculează dimensiunea outputului după layerele convoluționale"""
+
         with torch.no_grad():
             dummy_input = torch.zeros(1, 3, input_size, input_size)
             output = self.features(dummy_input)

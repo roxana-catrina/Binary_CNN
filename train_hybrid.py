@@ -1,7 +1,4 @@
-"""
-Training script pentru modelul HIBRID (Custom CNN + ResNet)
-Combină cel mai bun din ambele lumi!
-"""
+
 
 import torch
 from matplotlib import pyplot as plt
@@ -13,12 +10,7 @@ from utils_multilclass.data_loader import get_dataloaders
 
 
 def main():
-    # ==================== CONFIGURARE ====================
-    # Alege tipul de model hibrid:
-    # - 'hybrid_concat': Concatenează features (RECOMANDAT pentru început) ⭐⭐⭐⭐⭐
-    # - 'hybrid_add': Adună features ⭐⭐⭐⭐
-    # - 'hybrid_attention': Attention mechanism ⭐⭐⭐⭐⭐
-    # - 'ensemble': Average predictions ⭐⭐⭐⭐
+
 
     MODEL_TYPE = 'hybrid_concat'  # <-- Schimbă aici pentru alt tip
 
@@ -181,15 +173,7 @@ def main():
             print(f'[DEBUG] 🛑 Early stopping triggered after {epoch + 1} epochs')
             break
 
-    # ==================== TRAINING COMPLETE ====================
-    print(f'\n{"="*80}')
-    print(f'✅ TRAINING COMPLETED!')
-    print(f'{"="*80}')
-    print(f'🎯 Best Validation Accuracy: {best_val_accuracy:.2%}')
-    print(f'📉 Best Validation Loss: {best_val_loss:.4f}')
-    print(f'💾 Model saved to: best_hybrid_model_{MODEL_TYPE}.pth')
 
-    # ==================== VISUALIZE ====================
     fig, axes = plt.subplots(2, 2, figsize=(16, 12))
 
     # Loss plot
