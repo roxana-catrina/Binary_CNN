@@ -1,7 +1,3 @@
-"""
-Model Hibrid: Combină TumorClassifier custom cu ResNet18
-Trei strategii de combinare implementate
-"""
 
 import torch
 import torch.nn as nn
@@ -9,30 +5,15 @@ import torchvision.models as models
 
 
 class HybridTumorClassifier(nn.Module):
-    """
-    Model hibrid care combină features din:
-    1. TumorClassifier custom (modelul tău)
-    2. ResNet18 pre-trained (transfer learning)
-
-    Apoi concatenează features și face predicția finală
-    """
 
     def __init__(self, num_classes=3, input_size=224, fusion_type='concat'):
-        """
-        Args:
-            num_classes: Numărul de clase (3 pentru tine)
-            input_size: Dimensiunea input (224)
-            fusion_type: Tipul de combinare
-                - 'concat': Concatenează features (RECOMANDAT)
-                - 'add': Adună features
-                - 'attention': Folosește attention mechanism
-        """
+
         super(HybridTumorClassifier, self).__init__()
 
         self.fusion_type = fusion_type
         print(f"[HYBRID] Creating hybrid model with fusion type: {fusion_type}")
 
-        # ==================== BRANCH 1: MODELUL TĂU CUSTOM ====================
+
         print("[HYBRID] Initializing Custom CNN branch...")
         self.custom_features = nn.Sequential(
             # Block 1
@@ -76,25 +57,25 @@ class HybridTumorClassifier(nn.Module):
             nn.Dropout2d(0.3),
         )
 
-        # Calculează dimensiunea features custom
+
         self.custom_feature_size = self._get_conv_output(self.custom_features, input_size)
         print(f"[HYBRID] Custom CNN feature size: {self.custom_feature_size}")
 
-        # ==================== BRANCH 2: RESNET18 ====================
+        #  RESNET18
         print("[HYBRID] Loading ResNet18 pre-trained...")
         self.resnet = models.resnet18(pretrained=True)
 
-        # Extrage numărul de features din ResNet
+
         self.resnet_feature_size = self.resnet.fc.in_features  # 512 pentru ResNet18
 
-        # Îndepărtează ultimul layer (fc) pentru a extrage doar features
+
         self.resnet = nn.Sequential(*list(self.resnet.children())[:-1])
 
         print(f"[HYBRID] ResNet18 feature size: {self.resnet_feature_size}")
 
-        # ==================== FEATURE FUSION ====================
+
         if fusion_type == 'concat':
-            # Concatenează features din ambele modele
+
             combined_features = self.custom_feature_size + self.resnet_feature_size
             print(f"[HYBRID] Concatenated features: {combined_features}")
 
@@ -111,7 +92,7 @@ class HybridTumorClassifier(nn.Module):
             )
 
         elif fusion_type == 'add':
-            # Proiectează ambele features la aceeași dimensiune și le adună
+
             target_dim = 512
 
             self.custom_projection = nn.Linear(self.custom_feature_size, target_dim)
@@ -129,10 +110,10 @@ class HybridTumorClassifier(nn.Module):
             )
 
         elif fusion_type == 'attention':
-            # Folosește attention pentru a pondera features
+
             combined_features = self.custom_feature_size + self.resnet_feature_size
 
-            # Attention mechanism
+
             self.attention = nn.Sequential(
                 nn.Linear(combined_features, 256),
                 nn.Tanh(),
@@ -140,7 +121,7 @@ class HybridTumorClassifier(nn.Module):
                 nn.Softmax(dim=1)
             )
 
-            # Project to same dimension
+
             target_dim = 512
             self.custom_projection = nn.Linear(self.custom_feature_size, target_dim)
             self.resnet_projection = nn.Linear(self.resnet_feature_size, target_dim)
@@ -159,15 +140,13 @@ class HybridTumorClassifier(nn.Module):
         print(f"[HYBRID] Hybrid model initialized successfully! ✅")
 
     def _get_conv_output(self, conv_layers, input_size):
-        """Calculează dimensiunea output după layerele convolutional"""
         with torch.no_grad():
             dummy_input = torch.zeros(1, 3, input_size, input_size)
             output = conv_layers(dummy_input)
             return output.view(1, -1).size(1)
 
     def forward(self, x):
-        # ==================== EXTRACT FEATURES ====================
-        # Features din modelul custom
+
         custom_features = self.custom_features(x)
         custom_features = custom_features.view(custom_features.size(0), -1)
 
@@ -175,7 +154,7 @@ class HybridTumorClassifier(nn.Module):
         resnet_features = self.resnet(x)
         resnet_features = resnet_features.view(resnet_features.size(0), -1)
 
-        # ==================== FEATURE FUSION ====================
+
         if self.fusion_type == 'concat':
             # Concatenare simplă
             combined = torch.cat([custom_features, resnet_features], dim=1)
@@ -208,10 +187,7 @@ class HybridTumorClassifier(nn.Module):
 
 
 class EnsembleTumorClassifier(nn.Module):
-    """
-    Model Ensemble: Predicții separate din fiecare model, apoi average
-    Mai simplu dar tot foarte eficient!
-    """
+
 
     def __init__(self, num_classes=3, input_size=224):
         super(EnsembleTumorClassifier, self).__init__()
@@ -311,18 +287,8 @@ class EnsembleTumorClassifier(nn.Module):
         return output
 
 
-# Pentru compatibilitate cu codul existent
 def create_hybrid_model(num_classes=3, input_size=224, model_type='hybrid_concat'):
-    """
-    Factory function pentru a crea modelul dorit
 
-    Args:
-        model_type:
-            - 'hybrid_concat': Feature concatenation (RECOMANDAT) ⭐⭐⭐⭐⭐
-            - 'hybrid_add': Feature addition ⭐⭐⭐⭐
-            - 'hybrid_attention': Attention fusion ⭐⭐⭐⭐⭐
-            - 'ensemble': Ensemble averaging ⭐⭐⭐⭐
-    """
 
     if model_type == 'hybrid_concat':
         return HybridTumorClassifier(num_classes, input_size, fusion_type='concat')

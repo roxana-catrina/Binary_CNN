@@ -5,20 +5,17 @@ import torch.nn.functional as F
 from utils_binary.findConv2dOutShape import findConv2dOutShape
 
 
-# Define Architecture For CNN_TUMOR Model
 class CNN_TUMOR(nn.Module):
 
-    # Network Initialisation
+
     def __init__(self, params):
         super(CNN_TUMOR, self).__init__()
-
         Cin, Hin, Win = params["shape_in"]
         init_f = params["initial_filters"]
         num_fc1 = params["num_fc1"]
         num_classes = params["num_classes"]
         self.dropout_rate = params["dropout_rate"]
 
-        # Convolution Layers
         self.conv1 = nn.Conv2d(Cin, init_f, kernel_size=3)
         h, w = findConv2dOutShape(Hin, Win, self.conv1)
         self.conv2 = nn.Conv2d(init_f, 2 * init_f, kernel_size=3)
@@ -28,7 +25,6 @@ class CNN_TUMOR(nn.Module):
         self.conv4 = nn.Conv2d(4 * init_f, 8 * init_f, kernel_size=3)
         h, w = findConv2dOutShape(h, w, self.conv4)
 
-        # compute the flatten size
         self.num_flatten = h * w * 8 * init_f
         self.fc1 = nn.Linear(self.num_flatten, num_fc1)
         self.fc2 = nn.Linear(num_fc1, num_classes)

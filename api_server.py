@@ -1,7 +1,4 @@
-"""
-Flask REST API server for brain tumor detection
-This server accepts image uploads and returns tumor predictions
-"""
+
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import torch
@@ -143,31 +140,19 @@ def load_models():
 
 
 def predict_image(image):
-    """
-    Predict tumor presence in an image and tumor type if present
-
-    Args:
-        image: PIL Image object
-
-    Returns:
-        dict: Prediction results including tumor type if tumor is detected
-    """
     try:
         device = torch.device(DEVICE)
-
-        # Step 1: Binary classification - Check if tumor exists
         binary_model.eval()
         image_tensor = test_transform(image).unsqueeze(0)
         image_tensor = image_tensor.to(device)
 
         with torch.no_grad():
             binary_outputs = binary_model(image_tensor)
-            binary_probabilities = torch.exp(binary_outputs)  # Model returns log_softmax
+            binary_probabilities = torch.exp(binary_outputs)
             predicted_class = torch.argmax(binary_probabilities, dim=1).item()
             binary_confidence = binary_probabilities[0][predicted_class].item()
-
-        logger.info(f"Binary prediction: {BINARY_CLASS_LABELS[predicted_class]} (confidence: {binary_confidence:.4f})")
-
+        logger.info(f"Binary prediction: {BINARY_CLASS_LABELS[predicted_class]} "
+                    f"(confidence: {binary_confidence:.4f})")
         result = {
             'success': True,
             'prediction': BINARY_CLASS_LABELS[predicted_class],
@@ -178,8 +163,6 @@ def predict_image(image):
                 'tumor': float(binary_probabilities[0][1].item())
             }
         }
-
-        # Step 2: If tumor detected, classify tumor type
         if predicted_class == 1:  # Tumor detected
             hybrid_model.eval()
             hybrid_tensor = hybrid_transform(image).unsqueeze(0)
@@ -188,24 +171,17 @@ def predict_image(image):
             with torch.no_grad():
                 hybrid_outputs = hybrid_model(hybrid_tensor)
                 hybrid_probabilities = torch.softmax(hybrid_outputs, dim=1)
-
-                # Get all probabilities for the 3 tumor types
                 tumor_type_probs = {
                     label: float(hybrid_probabilities[0][i].item())
                     for i, label in enumerate(HYBRID_LABELS)
                 }
-
-                # Get the tumor type with highest probability
                 tumor_type = max(tumor_type_probs.items(), key=lambda x: x[1])
-
-                logger.info(f"Tumor type prediction: {tumor_type[0]} (confidence: {tumor_type[1]:.4f})")
+                logger.info(f"Tumor type prediction: {tumor_type[0]}"
+                            f" (confidence: {tumor_type[1]:.4f})")
                 logger.info(f"Tumor type probabilities: {tumor_type_probs}")
-
-            # Add tumor type information to result
             result['tumor_type'] = tumor_type[0]
             result['tumor_type_confidence'] = float(tumor_type[1])
             result['tumor_type_probabilities'] = tumor_type_probs
-
         logger.info(f"Final result: {result['prediction']}" +
                    (f" -> {result.get('tumor_type', 'N/A')}" if result['has_tumor'] else ""))
         logger.info(f"Result details: {result}")
