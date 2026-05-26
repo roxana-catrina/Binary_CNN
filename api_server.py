@@ -11,6 +11,7 @@ import logging
 import sys
 import numpy as np
 from dicom_processor import DicomProcessor
+from tumor_segmentation import process_tumor_segmentation
 
 # Add models directory to path
 # Add project root to Python path
@@ -546,6 +547,140 @@ def predict():
             'success': False,
             'error': str(e)
         }), 500
+
+
+@app.route('/api/predict-with-segmentation', methods=['POST'])
+def predict_with_segmentation():
+    """
+    Predict tumor and generate segmentation overlay with tumor dimensions.
+
+    Expected request:
+    - multipart/form-data with 'file' field containing image
+    OR
+    - JSON with 'image' field containing base64 encoded image
+
+    Optional query params:
+    - threshold: float (0.0-1.0) for CAM threshold (default 0.4)
+
+    Returns:
+    - JSON with prediction results + segmentation data:
+        - overlay_image_base64: heatmap overlay image
+        - contour_image_base64: image with tumor contoured in red
+        - dimensions: {width_pixels, height_pixels, width_mm, height_mm, area_mm2, ...}
+        - bounding_box: {x, y, width, height}
+    """
+    try:
+        if binary_model is None or hybrid_model is None:
+            return jsonify({
+                'success': False,
+                'error': 'Models not loaded'
+            }), 500
+
+        # Get threshold from query params
+        threshold = float(request.args.get('threshold', 0.4))
+        threshold = max(0.1, min(0.9, threshold))  # Clamp between 0.1 and 0.9
+
+        image = None
+
+        # Handle multipart/form-data upload
+        if 'file' in request.files:
+            file = request.files['file']
+            if file.filename == '':
+                return jsonify({'success': False, 'error': 'No file selected'}), 400
+
+            is_dicom = file.filename.lower().endswith(('.dcm', '.dicom'))
+
+            try:
+                file.stream.seek(0)
+            except Exception:
+                pass
+
+            file_bytes = file.read()
+
+            if len(file_bytes) == 0:
+                return jsonify({'success': False, 'error': 'Empty file received'}), 400
+
+            if is_dicom:
+                temp_path = 'temp_dicom_seg.dcm'
+                try:
+                    with open(temp_path, 'wb') as f:
+                        f.write(file_bytes)
+                    pixel_array = dicom_processor.read_dicom_file(temp_path)
+                    if pixel_array is None:
+                        return jsonify({'success': False, 'error': 'Error reading DICOM file'}), 400
+                    image = Image.fromarray(pixel_array).convert('RGB')
+                finally:
+                    if os.path.exists(temp_path):
+                        os.remove(temp_path)
+            else:
+                try:
+                    img_io = io.BytesIO(file_bytes)
+                    img = Image.open(img_io)
+                    if img.mode != 'RGB':
+                        img = img.convert('RGB')
+                    image = img
+                except Exception as img_error:
+                    return jsonify({'success': False, 'error': f'Cannot open image: {str(img_error)}'}), 400
+
+        # Handle JSON with base64 encoded image
+        elif request.is_json:
+            data = request.get_json()
+            if 'image' not in data:
+                return jsonify({'success': False, 'error': 'No image data provided'}), 400
+
+            image_data = data['image']
+            if ',' in image_data:
+                image_data = image_data.split(',')[1]
+
+            try:
+                image_bytes = base64.b64decode(image_data)
+            except Exception as b64_error:
+                return jsonify({'success': False, 'error': f'Invalid base64: {str(b64_error)}'}), 400
+
+            try:
+                img_io = io.BytesIO(image_bytes)
+                img = Image.open(img_io)
+                if img.mode != 'RGB':
+                    img = img.convert('RGB')
+                image = img
+            except Exception as img_error:
+                return jsonify({'success': False, 'error': f'Cannot open image: {str(img_error)}'}), 400
+        else:
+            return jsonify({'success': False, 'error': 'Invalid request format'}), 400
+
+        if image is None:
+            return jsonify({'success': False, 'error': 'Failed to load image'}), 400
+
+        logger.info(f"🔬 Starting segmentation prediction (threshold={threshold})")
+
+        # Run full segmentation pipeline
+        device = torch.device(DEVICE)
+        result = process_tumor_segmentation(
+            image_pil=image,
+            binary_model=binary_model,
+            hybrid_model=hybrid_model,
+            device=device,
+            binary_transform=test_transform,
+            hybrid_transform=hybrid_transform,
+            threshold=threshold
+        )
+
+        if result['success']:
+            logger.info(f"✅ Segmentation complete: has_tumor={result['has_tumor']}")
+            if result.get('segmentation'):
+                dims = result['segmentation'].get('dimensions')
+                if dims:
+                    logger.info(f"📐 Tumor dimensions: {dims['width_mm']}mm x {dims['height_mm']}mm")
+                    logger.info(f"📐 Tumor area: {dims['area_mm2']} mm²")
+            return jsonify(result), 200
+        else:
+            return jsonify(result), 500
+
+    except Exception as e:
+        logger.error(f"Segmentation request error: {e}")
+        import traceback
+        logger.error(traceback.format_exc())
+        return jsonify({'success': False, 'error': str(e)}), 500
 
 
 @app.route('/api/batch-predict', methods=['POST'])
