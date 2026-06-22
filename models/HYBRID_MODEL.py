@@ -146,15 +146,10 @@ class HybridTumorClassifier(nn.Module):
             return output.view(1, -1).size(1)
 
     def forward(self, x):
-
         custom_features = self.custom_features(x)
         custom_features = custom_features.view(custom_features.size(0), -1)
-
-        # Features din ResNet
         resnet_features = self.resnet(x)
         resnet_features = resnet_features.view(resnet_features.size(0), -1)
-
-
         if self.fusion_type == 'concat':
             # Concatenare simplă
             combined = torch.cat([custom_features, resnet_features], dim=1)
@@ -273,15 +268,11 @@ class EnsembleTumorClassifier(nn.Module):
             return output.view(1, -1).size(1)
 
     def forward(self, x):
-        # Predicții din modelul custom
+
         custom_out = self.custom_features(x)
         custom_out = custom_out.view(custom_out.size(0), -1)
         custom_pred = self.custom_classifier(custom_out)
-
-        # Predicții din ResNet
         resnet_pred = self.resnet(x)
-
-        # Average predictions (ensemble)
         output = (custom_pred + resnet_pred) / 2.0
 
         return output

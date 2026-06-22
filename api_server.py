@@ -164,7 +164,7 @@ def predict_image(image):
                 'tumor': float(binary_probabilities[0][1].item())
             }
         }
-        if predicted_class == 1:  # Tumor detected
+        if predicted_class == 1:
             hybrid_model.eval()
             hybrid_tensor = hybrid_transform(image).unsqueeze(0)
             hybrid_tensor = hybrid_tensor.to(device)
